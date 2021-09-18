@@ -1,6 +1,6 @@
 import math as m
-#import sympy
-#import numpy
+import sympy
+import numpy
 
 def list_product(list):
     product = 1
@@ -165,4 +165,35 @@ def pollard_rho_factor(n, start=2):
 def PR_g(x, n):
     output = (x**2 + 1) % n
     return output
+
+def Pollard_rho_brent(n, start=2, m=1):
+    y = start
+    r = 1
+    q = 1
+    g = 1
+    while g == 1:
+        x = y
+        for i in range(1, r+1):
+            y = PR_g(y,n)
+            k = 0
+        while (k < r and g == 1):
+            ys = y
+            for i in range(1, min(m, r-k)+1):
+                y = PR_g(y,n)
+                q = q * abs(x-y) % n
+            g = gcd(q,n)
+            k += m
+        r *= 2
+    if g == n:
+        while True:
+            ys = PR_g(ys)
+            g = gcd(abs(x-ys), n)
+            if g > 1:
+                break
+    if g == n:
+        Pollard_rho_brent(n, start+1)
+    else:
+        p = g
+        q = n // g
+        return (p,q)
 

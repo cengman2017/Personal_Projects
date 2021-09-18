@@ -3,7 +3,7 @@ import functions as f
 import time
 import random
 
-primesFile = open("list_of_primes.txt", 'r')
+primesFile = open(r"C:\Users\cxe67\Desktop\Personal_Projects\Crpyto\list_of_primes.txt", 'r')
 
 list_of_primes = []
 for line in primesFile:
@@ -30,7 +30,8 @@ print(a)
 print(b)
 print(aprime)
 print(n)
-
+print(p)
+print(q)
 
 
 ##start = time.time()
