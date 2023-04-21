@@ -1,0 +1,29 @@
+import functions as f
+import time
+import sympy
+
+n = 766111 * 766127
+start = time.time()
+
+
+
+end = time.time()
+
+runtime = end - start
+
+#print(factors)
+print(runtime)
+
+#n = F_8 = 2**256 + 1
+#p = 1238926361552897
+#q = 93461639715357977769163558199606896584051237541638188580280321
+#computing time: 10 minutes 39 seconds
+
+#n = F_7 = 2*128 + 1
+#p = 59649589127497217
+#q = 5704689200685129054721
+#computing time: 1 hour 37 minutes 40 seconds
+
+#n = 2390428043128397461237128935714350987643505328572257830945723940572349058709
+#factors = 229 * 541382097744008377 * 19281299566743479373784862595662790563791279861910938873
+#computing time: 3 Hours 17 Minutes 41 Seconds
